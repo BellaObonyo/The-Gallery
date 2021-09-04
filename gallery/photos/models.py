@@ -10,6 +10,10 @@ class Image(models.Model):
     pub_date = models.DateTimeField(auto_now_add=True)
     name_image = models.ImageField(upload_to = 'articles/', default='default.jpg')
 
+    @classmethod
+    def get_name(cls):
+        Bella=cls.objects.all()
+        return Bella
     def __str__(self):
         return self.description
 class Editor(models.Model):
@@ -17,6 +21,7 @@ class Editor(models.Model):
     last_name = models.CharField(max_length =30)
     email = models.EmailField()
     phone_number = models.CharField(max_length = 10,blank =True)
+    
 
     def save_editor(self):
         self.save()
