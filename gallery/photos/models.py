@@ -1,4 +1,6 @@
 from django.db import models
+from cloudinary.models import CloudinaryField
+
 
 # Create your models here.
 # Create your models here.
@@ -9,6 +11,7 @@ class Image(models.Model):
     category = models.ManyToManyField('Category')
     pub_date = models.DateTimeField(auto_now_add=True)
     name_image = models.ImageField(upload_to = 'articles/', default='default.jpg')
+    image = CloudinaryField('image')  
 
     @classmethod
     def get_name(cls):

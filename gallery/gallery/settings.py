@@ -11,6 +11,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
+
+# adding config
+cloudinary.config( 
+  cloud_name = "badgerz", 
+  api_key = "432116956527996", 
+  api_secret = "FsHyMkP8RkXd0i3-ZpCsb_4jp4k" 
+)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -125,3 +135,4 @@ STATIC_URL = '/static/'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
