@@ -10,8 +10,7 @@ class Image(models.Model):
     location = models.ManyToManyField('Location')
     category = models.ManyToManyField('Category')
     pub_date = models.DateTimeField(auto_now_add=True)
-    name_image = models.ImageField(upload_to = 'articles/', default='default.jpg')
-    image = CloudinaryField('image')  
+    image = CloudinaryField('image',default='')  
 
     @classmethod
     def get_name(cls):
