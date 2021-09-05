@@ -1,0 +1,24 @@
+{% extends 'base.html' %} {% block content %}
+<div class="row">
+  {% for pic in all_pics %}
+  <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 columns">
+    <div class="scale">
+      <div class="opacity">
+        <div class="view">
+          <a href="" class="btn-view">image</a>
+        </div>
+      </div>
+      <img src="{{pic.image.url}}" alt="{{pic.name}}" class="img-fluid myimage">
+      <button id='btn-copy' data-info="{{request.get_host }}{{pic.image.url}}" type="button"
+        class="btn btn-info btn-xs">
+        <span class="glyphicon glyphicon-copy"></span>
+        copy link
+      </button>
+      <div id="myModal" class="modal">
+        <!-- The Close Button -->
+        <span class="close">&times;</span>
+        <!-- Modal Content (The Image) -->
+        <img src='' class="modal-content" id="modal-con">
+        <!-- Modal Caption (Image Text) -->
+        <div id="caption"></div>
+      </div>
