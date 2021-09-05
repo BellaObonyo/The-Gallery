@@ -8,31 +8,6 @@
 </head>
 <body>
   <h1 class="text-center name">Hi My Name Is Bella and Welcome to My Gallery</h1>
-  {% extends 'base.html' %}
-{% load bootstrap3 %}
-{% block content %}
-<div class="row">
-  <div class="col-md-2"></div>
-  <div class="col-md-8 banner">
-    <div class="name">
-    <h1 class="text-center name">Welcome to My Gallery Website</h1>
-    <div id="launcher">
-      <a href="{% url 'allPhotos' %}" class="button">Photos <span>&#8594;</span></a>
-    </div>
-  </div>
-  </div>
-  <div class="col-md-2"></div>
-
-</div>
-<div class="row" id="email">
-  <div class="col-md-3"></div>
-  <div class="col-md-6" style="margin-top: 1cm;">
-  </div>
-  <div class="col-md-3"></div>
-
-
-</div>
-{% endblock content %}
   <!-- {% for i in Jane %}
   {{i.description}}
   {%endfor%}  -->
