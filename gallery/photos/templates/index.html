@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
   <h1 class="text-center name">Hi Welcome to Bella's Gallery</h1>
-  <!-- {% for i in Jane %}
+  <div class="row">
+  {% for i in images %}
+  <div class="col-md-3">
+  <img src="{{i.image.url}}"width="100%" alt="">
   {{i.description}}
-  {%endfor%}  -->
+</div>
+  {%endfor%} 
+</div>
 </body>
 </html>
