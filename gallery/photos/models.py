@@ -43,7 +43,7 @@ class Image(models.Model):
     location = models.ForeignKey(Location,on_delete=CASCADE)
     category = models.ForeignKey(Category,on_delete=CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    image = models.ImageField(upload_to='gallery/',default='no photo')  
+    image = CloudinaryField('image',default='no photo')  
 
     def save_image(self):
         self.save()
