@@ -1,35 +1,10 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.db.models.deletion import CASCADE
 
 
 # Create your models here.
 # Create your models here.
-class Image(models.Model):
-    description= models.CharField(max_length =60)
-    editor = models.ForeignKey('Editor', on_delete=models.CASCADE)
-    location = models.ManyToManyField('Location')
-    category = models.ManyToManyField('Category')
-    pub_date = models.DateTimeField(auto_now_add=True)
-    image = CloudinaryField('image',default='')  
-
-    @classmethod
-    def get_name(cls):
-        Bella=cls.objects.all()
-        return Bella
-    def __str__(self):
-        return self.description
-class Editor(models.Model):
-    first_name = models.CharField(max_length =30)
-    last_name = models.CharField(max_length =30)
-    email = models.EmailField()
-    phone_number = models.CharField(max_length = 10,blank =True)
-    
-
-    def save_editor(self):
-        self.save()
-
-    def __str__(self):
-        return self.first_name
 
 
 class Category(models.Model):
@@ -48,4 +23,22 @@ class Location(models.Model):
 
     def __str__(self):
         return self.name
+
+class Image(models.Model):
+    description= models.CharField(max_length =60)
+    location = models.ForeignKey(Location,on_delete=CASCADE)
+    category = models.ForeignKey(Category,on_delete=CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    image = CloudinaryField('image',default='')  
+
+    @classmethod
+    def get_name(cls):
+        Bella=cls.objects.all()
+        return Bella
+    def __str__(self):
+        return self.description
+    @classmethod
+    def search_by_category(cls,category):
+        images=cls.objects.filter(image_category__name__icontains=category)
+        return images
 
