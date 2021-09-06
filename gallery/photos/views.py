@@ -1,3 +1,4 @@
+from django.db.models import query
 from django.http import request
 from django.shortcuts import redirect, render
 from photos.models import Image
@@ -8,13 +9,12 @@ def index(request):
 
     
 def search_photos_category(request):
-  if 'photo' in request.GET and request.GET["photo"]:
-    search_term = request.GET.get("photo")
-    searched_photos = Image.search_photos_by_category(search_term)
-    message = f"{search_term}"
-
-    return render(request, 'search.html', {"message":message,"photos":searched_photos})
-
-  else:
-    message = 'You have not searched for any term'
-    return render(request, 'search.html', {"message":message})    
+    
+    della=Image.objects.all()
+    if "pen" in request.GET:
+         query=request.GET["pen"]
+         della=Image.objects.filter(location__name__icontains=query)
+    
+    return render(request,'search.html',{"della":della})
+    
+    
