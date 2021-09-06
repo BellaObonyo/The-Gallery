@@ -29,7 +29,7 @@ class Image(models.Model):
     location = models.ForeignKey(Location,on_delete=CASCADE)
     category = models.ForeignKey(Category,on_delete=CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    image = CloudinaryField('image',default='')  
+    image =models.ImageField('image',default='no photo')  
 
     @classmethod
     def get_name(cls):
