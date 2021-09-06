@@ -1,3 +1,4 @@
+from cloudinary.uploader import upload
 from django.db import models
 from cloudinary.models import CloudinaryField
 from django.db.models.deletion import CASCADE
@@ -29,7 +30,7 @@ class Image(models.Model):
     location = models.ForeignKey(Location,on_delete=CASCADE)
     category = models.ForeignKey(Category,on_delete=CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    image =models.ImageField('image',default='no photo')  
+    image =models.ImageField(upload-To,default=True)  
 
     @classmethod
     def get_name(cls):
