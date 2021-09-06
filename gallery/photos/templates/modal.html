@@ -11,13 +11,13 @@
             <img src="{{i.image.url}}" alt="" style="height: 20rem; width: 30rem;">
             <br>
             <br>
-            
+            <p> {{i.description}}</p>
+            <p> {{i.location}}</p>
+           
         </div>
         <div class="modal-footer">
-            <input class="form-control input-lg" type="text" value="{{image.image.url}}"
-                      id="copy">
                   <button class="btn btn-success btn-sm"
-                      onclick="copyLink('{{image.id}}.url')">Copy</button>
+                  >Copy</button>
                       <button type="button" class="btn btn-danger btn-simple btn-sm" data-dismiss="modal">Close</button>
         </div>
       </div>
