@@ -2,7 +2,7 @@
 ## Built By [Obonyo Cynthia](https://github.com/ObonyoCynthia/Gallery)
 ## Description
 Gallery  is a web application that displays a list of photo categories,Location and Images. [gallery API]().
-You can view the site at:[Heroku](heroku link)
+You can view the site at:[Bella Gallery](https://bellaphotos.herokuapp.com/)
 ## User Stories
 These are the behaviours/features that the application implements for use by a user.
 As a user I would like to:
